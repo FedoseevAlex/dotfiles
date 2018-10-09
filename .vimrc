@@ -90,6 +90,8 @@ set softtabstop=2
 set expandtab
 set noshiftround
 
+set noswapfile
+
 "NerdTree toggle
 nmap <Tab> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
