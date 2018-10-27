@@ -18,9 +18,6 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
@@ -41,6 +38,12 @@ Plugin 'morhetz/gruvbox'
 
 "Vim airline
 Plugin 'vim-airline/vim-airline'
+
+"C/C++ plugin
+Plugin 'luchermitte/lh-cpp'
+
+" The sparkup vim script is in a subdirectory of this repo called vim.
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,6 +95,7 @@ set noshiftround
 
 set noswapfile
 
+set clipboard=unnamedplus
 "NerdTree toggle
 nmap <Tab> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
