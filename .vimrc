@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -6,7 +7,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -18,32 +18,26 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-"Markdown language support
-Plugin 'plasticboy/vim-markdown'
-
+" Vim airline status bar
+Plugin 'vim-airline/vim-airline'
 "Nerd tree 
 Plugin 'scrooloose/nerdtree'
-
-"Python PEP8 and static analyser plugin
-Plugin 'nvie/vim-flake8'
 
 "Solarized color theme
 Plugin 'morhetz/gruvbox'
 
-"Vim airline
-Plugin 'vim-airline/vim-airline'
-
-"C/C++ plugin
-Plugin 'luchermitte/lh-cpp'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-
+"Markdown plugins
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,9 +54,12 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Vim airline settings
+let g:airline#extensions#tabline#enabled = 1
+
 "Color scheme
 colorscheme gruvbox
-let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_termcolors=256
 set background=dark
 
@@ -84,25 +81,24 @@ set visualbell
 set encoding=utf-8
 
 " Whitespace
-set wrap
-set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set textwidth=120
+set tabstop=4
+set shiftwidth=4
+" set softtabstop=4
 set expandtab
 set noshiftround
 
 set noswapfile
 
-set clipboard=unnamedplus
 "NerdTree toggle
 nmap <Tab> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-imap <C-h> <Left>
-imap <C-k> <Up>
-imap <C-j> <Down>
-imap <C-l> <Right>
 
+" md files folding disable
+let g:vim_markdown_folding_disabled = 1
+" imap <C-h> <Left>
+" imap <C-k> <Up>
+" imap <C-j> <Down>
+" imap <C-l> <Right>
 
