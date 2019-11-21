@@ -32,12 +32,18 @@ Plugin 'vim-airline/vim-airline'
 "Nerd tree 
 Plugin 'scrooloose/nerdtree'
 
+"Markdown
+Plugin 'plasticboy/vim-markdown'
 "Solarized color theme
 Plugin 'morhetz/gruvbox'
 
-"Markdown plugins
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+" Python
+Plugin 'vim-syntastic/syntastic'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'majutsushi/tagbar'
+
+"ACK Plugin
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,9 +60,12 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+nmap <F8> :TagbarToggle<CR>
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_post_args="--max-line-length=120"
 " Vim airline settings
 let g:airline#extensions#tabline#enabled = 1
-
+let g:vim_markdown_folding_disabled = 1
 "Color scheme
 colorscheme gruvbox
 let g:gruvbox_contrast_dark='soft'
@@ -65,8 +74,6 @@ set background=dark
 
 " Turn on syntax highlighting
 syntax on
-" Security
-set modelines=0
 
 " Show line numbers
 set number
@@ -89,16 +96,9 @@ set expandtab
 set noshiftround
 
 set noswapfile
+set cursorline
+set colorcolumn=120
 
 "NerdTree toggle
 nmap <Tab> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-
-
-" md files folding disable
-let g:vim_markdown_folding_disabled = 1
-" imap <C-h> <Left>
-" imap <C-k> <Up>
-" imap <C-j> <Down>
-" imap <C-l> <Right>
-
