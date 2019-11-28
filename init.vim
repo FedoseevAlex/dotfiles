@@ -3,8 +3,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
@@ -45,6 +45,9 @@ Plugin 'majutsushi/tagbar'
 "ACK Plugin
 Plugin 'mileszs/ack.vim'
 
+" Rust
+Plugin 'rust-lang/rust.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -76,7 +79,7 @@ set background=dark
 syntax on
 
 " Show line numbers
-set number
+set number relativenumber
 
 " Show file stats
 set ruler
