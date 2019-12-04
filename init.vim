@@ -105,3 +105,6 @@ set colorcolumn=120
 "NerdTree toggle
 nmap <Tab> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+nmap <PageUp> :bp<CR>
+nmap <PageDown> :bn<CR>
+nmap <C-c> :bw<CR>
