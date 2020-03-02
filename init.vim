@@ -3,6 +3,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 " alternatively, pass a path where Vundle should install plugins
@@ -45,9 +46,10 @@ Plugin 'majutsushi/tagbar'
 "ACK Plugin
 Plugin 'mileszs/ack.vim'
 
-" Rust
+" Rust Plugin
 Plugin 'rust-lang/rust.vim'
 
+" Relative numbers
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -66,6 +68,7 @@ filetype plugin indent on    " required
 nmap <F8> :TagbarToggle<CR>
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_post_args="--max-line-length=120"
+let g:syntastic_rust_checkers = ['rustc']
 " Vim airline settings
 let g:airline#extensions#tabline#enabled = 1
 let g:vim_markdown_folding_disabled = 1
@@ -73,6 +76,7 @@ let g:vim_markdown_folding_disabled = 1
 colorscheme gruvbox
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_termcolors=256
+" set background=dark
 set background=dark
 
 " Turn on syntax highlighting
