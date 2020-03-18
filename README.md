@@ -15,4 +15,11 @@ Packages to install:
 `apt install redshift`  
 `pacman -S redshift`  
 
+### xrandr setup
+- `xrandr --output HDMI1 --auto --left-of eDP1`  
+- `xrandr --output HDMI1 --off`  
+
+### git setup
+- `git config --global alias.graph "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%aN>%Creset'"`
+- Global gitignore file could be placed to `~/.config/git/ignore'
 
