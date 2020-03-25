@@ -39,7 +39,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Escape kill
 
 # lock screen shortcut
-bindsym $mod+Shift+z exec /home/alexander/Templates/i3lock-fancy-rapid/i3lock-fancy-rapid 20 3
+bindsym $mod+Shift+z exec ~/Templates/i3lock-fancy-rapid/i3lock-fancy-rapid 20 3
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
